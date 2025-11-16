@@ -1,0 +1,59 @@
+# Below is a flowchart you can view directly or copy into any Mermaid-compatible editor (like mermaid.live) to export as PNG/SVG.
+
+flowchart TD
+
+    %% NODE DEFINITIONS
+    T0["UrbanCart - To-Be Customer Support Ticket Resolution Process"]
+
+    A1["Customer submits structured ticket"]
+    S1["System validates mandatory fields"]
+    S2["System auto-categorises ticket"]
+    S3["System sets priority based on SLA"]
+    S4["System auto-routes to correct queue"]
+
+    A2["Agent opens prioritised queue"]
+    A3["Agent reviews ticket context"]
+
+    D1{"Is information complete?"}
+
+    S5["System auto-requests missing info"]
+    C1["Customer provides required info"]
+
+    A4["Agent uses template / knowledge base"]
+
+    D2{"Can agent resolve?"}
+
+    A5["Agent resolves ticket"]
+    A6["Agent sends final reply"]
+    S6["System triggers CSAT survey"]
+    END1["Ticket closed and metrics updated"]
+
+    E1["Forward to warehouse / finance / lead"]
+    E2["External team responds in CRM"]
+
+    %% FLOWS
+    T0 --> A1
+    A1 --> S1
+    S1 --> S2
+    S2 --> S3
+    S3 --> S4
+
+    S4 --> A2
+    A2 --> A3
+    A3 --> D1
+
+    D1 -->|No| S5
+    S5 --> C1
+    C1 --> S1
+
+    D1 -->|Yes| A4
+    A4 --> D2
+
+    D2 -->|Yes| A5
+    A5 --> A6
+    A6 --> S6
+    S6 --> END1
+
+    D2 -->|No| E1
+    E1 --> E2
+    E2 --> A5

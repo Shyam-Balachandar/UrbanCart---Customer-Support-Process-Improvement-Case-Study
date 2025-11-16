@@ -1,0 +1,29 @@
+# As-Is Process Flowchart (Mermaid)
+
+# Below is a flowchart you can view directly or copy into any Mermaid-compatible editor (like mermaid.live) to export as PNG/SVG.
+
+
+
+flowchart TD
+    A([Customer Submits Ticket]) --> B[CRM Creates Ticket]
+    B --> C[Agent Opens Ticket Queue]
+    C --> D[Agent Reads & Categorises Ticket]
+    D --> E{Is Information Complete?}
+
+    E -- No --> F[Request More Info]
+    F --> G[Customer Provides Info]
+    G --> E
+
+    E -- Yes --> H{Can Agent Solve It?}
+
+    H -- Yes --> I[Agent Resolves Ticket]
+    I --> J[Agent Sends Final Reply]
+    J --> K([Ticket Closed])
+    K --> L([CSAT Survey Sent])
+
+    H -- No --> M[Forward to Warehouse/Finance/Team Lead]
+    M --> N[External Team Responds]
+    N --> J
+```
+
+You can copy/paste this diagram into **[https://mermaid.live](https://mermaid.live)** and download it as an image.
