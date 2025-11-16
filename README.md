@@ -1,5 +1,5 @@
-# 🔥 UrbanCart – Customer Support Process Improvement Case Study  
-### **“How Can We Scam an E-Commerce Company”**
+# 🔥 UrbanCart - Customer Support Process Improvement Case Study  
+### **“How We Can Scam an E-Commerce Company”**
 
 ---
 
